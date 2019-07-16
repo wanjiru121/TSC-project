@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Students Tabled Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<h2>All Students</h2>
+	<button><a href="/student/add">Add a new student</a></button>
+
+   <table class="table table-striped table-bordered">
+	<tablehead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Reg NO.</th>
+			<th>Details</th>
+			<th>Edit</th>
+		</tr>
+	
+		{% for student in students %}
+	
+		<tr>
+			<td>{{student.first_name}}</td>
+			<td>{{student.last_name}}</td>
+			<td>{{student.registration_number}}</td>
+			<td><a href = "/student/view/{{student.pk}}/">View more</a></td>
+			<td><a href="/student/edit/{{student.pk}}">Edit student</a></td>
+		</tr>
+	
+		{% endfor %}
+	</tablehead>
+   </table>
+</div>
+</body>
