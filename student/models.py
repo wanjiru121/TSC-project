@@ -16,5 +16,5 @@ class Student(models.Model):
   
 
   def __str__(self):
-    return self.first_name
+    return self.first_name + " " + self.last_name
 # Create your models here.
